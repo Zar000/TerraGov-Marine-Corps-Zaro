@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;structure&#x2F;droppod - byond</title>
+</head>
+<body>
+<header>
+    <a href="index.html">byond</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/structure/droppod.html#var">Var Details</a> - <a href="obj/structure/droppod.html#proc">Proc Details</a></header>
+<main>
+<h1>droppod <aside>/<a href="obj.html">obj</a>/<a href="obj/structure/droppod.html">structure/droppod</a></aside>
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L12">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 12"/></a></h1>
+
+<p>base marine drop pod. can be controlled by an attached <a href="obj/structure/droppod.html" title="/obj/structure/droppod">/obj/structure/droppod/leader</a> or <a href="obj/machinery/computer.html" title="/obj/machinery/computer">/obj/machinery/computer/droppod_control</a></p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="obj/structure/droppod.html#var/drop_state">drop_state</a></th><td>Current drop pod status: shipside = ready, active = mid-drop, landed = planetside</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#var/falltime">falltime</a></th><td>after the pod finishes it's travelhow long it spends falling</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#var/interaction_actions">interaction_actions</a></th><td>Action to actually launch the drop pod</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#var/launch_allowed">launch_allowed</a></th><td>Whether launch is allowed. for things like disabling during hijack phase</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#var/operation_started">operation_started</a></th><td>If true, you can launch the droppod before drop pod delay</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#var/reserved_area">reserved_area</a></th><td>3x3 transit reservation for immersion as if flying through space</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#var/target_x">target_x</a></th><td>X target coordinate</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#var/target_y">target_y</a></th><td>Y target coordinate</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/structure/droppod.html#proc/allow_drop">allow_drop</a></th><td>Allow this droppod to ignore dropdelay</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#proc/checklanding">checklanding</a></th><td>returns boolean if the currently set target/optionally passed turf are valid to drop to</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#proc/completedrop">completedrop</a></th><td>completes landing a little delayed for a dramatic effect</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#proc/disable_launching">disable_launching</a></th><td>Disables launching upon dropship hijack</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#proc/dodrop">dodrop</a></th><td>Do the stuff when it &quot;hits the ground&quot;</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#proc/finish_drop">finish_drop</a></th><td>Moves the droppod into its target turf, which it updates if needed</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#proc/launchpod">launchpod</a></th><td>attempts to launch the drop pod at it's currently set coordinates. commanded_drop is TRUE when the drop is being requested by a command drop pod</td></tr>
+            <tr><th><a href="obj/structure/droppod.html#proc/set_target">set_target</a></th><td>sets target of this drop pod and notifies the user if it's a valid target</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/drop_state"><aside class="declaration">var </aside>drop_state
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L33">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 33"/></a></h3>
+        <p>Current drop pod status: shipside = ready, active = mid-drop, landed = planetside</p><h3 id="var/falltime"><aside class="declaration">var </aside>falltime
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L43">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 43"/></a></h3>
+        <p>after the pod finishes it's travelhow long it spends falling</p><h3 id="var/interaction_actions"><aside class="declaration">var </aside>interaction_actions
+            <aside>&ndash; /list/datum/action/innate</aside>
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L41">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 41"/></a></h3>
+        <p>Action to actually launch the drop pod</p><h3 id="var/launch_allowed"><aside class="declaration">var </aside>launch_allowed
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L35">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 35"/></a></h3>
+        <p>Whether launch is allowed. for things like disabling during hijack phase</p><h3 id="var/operation_started"><aside class="declaration">var </aside>operation_started
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L37">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 37"/></a></h3>
+        <p>If true, you can launch the droppod before drop pod delay</p><h3 id="var/reserved_area"><aside class="declaration">var </aside>reserved_area
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/turf_reservation.html">turf_reservation</a></aside>
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L39">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 39"/></a></h3>
+        <p>3x3 transit reservation for immersion as if flying through space</p><h3 id="var/target_x"><aside class="declaration">var </aside>target_x
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L29">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 29"/></a></h3>
+        <p>X target coordinate</p><h3 id="var/target_y"><aside class="declaration">var </aside>target_y
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L31">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 31"/></a></h3>
+        <p>Y target coordinate</p><h2 id="proc">Proc Details</h2><h3 id="proc/allow_drop"><aside class="declaration">proc </aside>allow_drop<aside>() 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L82">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 82"/></a></aside>
+        </h3>
+        <p>Allow this droppod to ignore dropdelay</p><h3 id="proc/checklanding"><aside class="declaration">proc </aside>checklanding<aside>(/<a href="mob.html">mob</a>/user, optional_turf) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L131">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 131"/></a></aside>
+        </h3>
+        <p>returns boolean if the currently set target/optionally passed turf are valid to drop to</p><h3 id="proc/completedrop"><aside class="declaration">proc </aside>completedrop<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L239">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 239"/></a></aside>
+        </h3>
+        <p>completes landing a little delayed for a dramatic effect</p><h3 id="proc/disable_launching"><aside class="declaration">proc </aside>disable_launching<aside>() 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L76">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 76"/></a></aside>
+        </h3>
+        <p>Disables launching upon dropship hijack</p><h3 id="proc/dodrop"><aside class="declaration">proc </aside>dodrop<aside>(/<a href="turf.html">turf</a>/targetturf, /<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L231">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 231"/></a></aside>
+        </h3>
+        <p>Do the stuff when it &quot;hits the ground&quot;</p><h3 id="proc/finish_drop"><aside class="declaration">proc </aside>finish_drop<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L204">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 204"/></a></aside>
+        </h3>
+        <p>Moves the droppod into its target turf, which it updates if needed</p><h3 id="proc/launchpod"><aside class="declaration">proc </aside>launchpod<aside>(/<a href="mob.html">mob</a>/user, commanded_drop) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L162">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 162"/></a></aside>
+        </h3>
+        <p>attempts to launch the drop pod at it's currently set coordinates. commanded_drop is TRUE when the drop is being requested by a command drop pod</p><h3 id="proc/set_target"><aside class="declaration">proc </aside>set_target<aside>(new_x, new_y) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/game/objects/structures/droppod.dm#L121">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;structures&#x2F;droppod.dm 121"/></a></aside>
+        </h3>
+        <p>sets target of this drop pod and notifies the user if it's a valid target</p></main>
+<footer>
+    tgmc.dme
+    <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/tree/79a830b66231ff0ef778870bd6140fe23128faa9">79a830b</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

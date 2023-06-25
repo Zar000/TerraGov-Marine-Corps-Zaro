@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;ai_behavior&#x2F;spiderling - byond</title>
+</head>
+<body>
+<header>
+    <a href="index.html">byond</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/ai_behavior/spiderling.html#proc">Proc Details</a></header>
+<main>
+<h1>spiderling <aside>/<a href="datum.html">datum</a>/<a href="datum/ai_behavior.html">ai_behavior</a>/<a href="datum/ai_behavior/spiderling.html">spiderling</a></aside>
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 30"/></a></h1>
+
+<p>We QDEL them as cleanup and preventing them from being sold</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/apply_spiderling_jelly">apply_spiderling_jelly</a></th><td>Signal handler to apply resin jelly to the spiderling whenever widow gets it</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/attack_target">attack_target</a></th><td>Signal handler to try to attack our target</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/decide_mark">decide_mark</a></th><td>Decides what to do when widow uses spiderling mark ability</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/go_to_obj_target">go_to_obj_target</a></th><td>Signal handler to check if we can attack the obj's that our escorted_atom is attacking</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/go_to_target">go_to_target</a></th><td>Signal handler to check if we can attack what our escorted_atom is attacking</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/kill_parent">kill_parent</a></th><td>This kills the spiderling</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/look_for_new_state">look_for_new_state</a></th><td>Check if escorted_atom moves away from the spiderling while it's attacking something, this is to always keep them close to escorted_atom</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/only_set_escorted_atom">only_set_escorted_atom</a></th><td>Sets escorted atom to our pre-defined default escorted atom, which by default is this spiderling's widow</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/parent_resist">parent_resist</a></th><td>resist when widow does</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/register_action_signals">register_action_signals</a></th><td>Check so that we dont keep attacking our target beyond it's death</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/spiderling_rage">spiderling_rage</a></th><td>This happens when the spiderlings mother dies, they move faster and will attack any nearby marines</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/toggle_rest">toggle_rest</a></th><td>rest and unrest when widow does</td></tr>
+            <tr><th><a href="datum/ai_behavior/spiderling.html#proc/triggered_spiderling_rage">triggered_spiderling_rage</a></th><td>Makes the spiderling roar and then kill themselves after some time</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/apply_spiderling_jelly"><aside class="declaration">proc </aside>apply_spiderling_jelly<aside>() 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L169">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 169"/></a></aside>
+        </h3>
+        <p>Signal handler to apply resin jelly to the spiderling whenever widow gets it</p><h3 id="proc/attack_target"><aside class="declaration">proc </aside>attack_target<aside>(/<a href="datum.html">datum</a>/source) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L93">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 93"/></a></aside>
+        </h3>
+        <p>Signal handler to try to attack our target</p><h3 id="proc/decide_mark"><aside class="declaration">proc </aside>decide_mark<aside>(source, /<a href="atom.html">atom</a>/A) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L48">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 48"/></a></aside>
+        </h3>
+        <p>Decides what to do when widow uses spiderling mark ability</p><h3 id="proc/go_to_obj_target"><aside class="declaration">proc </aside>go_to_obj_target<aside>(source, /<a href="obj.html">obj</a>/target) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L73">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 73"/></a></aside>
+        </h3>
+        <p>Signal handler to check if we can attack the obj's that our escorted_atom is attacking</p><h3 id="proc/go_to_target"><aside class="declaration">proc </aside>go_to_target<aside>(source, /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/target) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L81">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 81"/></a></aside>
+        </h3>
+        <p>Signal handler to check if we can attack what our escorted_atom is attacking</p><h3 id="proc/kill_parent"><aside class="declaration">proc </aside>kill_parent<aside>() 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L151">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 151"/></a></aside>
+        </h3>
+        <p>This kills the spiderling</p><h3 id="proc/look_for_new_state"><aside class="parent"><a title="/datum/ai_behavior" href="datum/ai_behavior.html#proc/look_for_new_state">&uarr;</a></aside>look_for_new_state<aside>() 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L108">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 108"/></a></aside>
+        </h3>
+        <p>Check if escorted_atom moves away from the spiderling while it's attacking something, this is to always keep them close to escorted_atom</p><h3 id="proc/only_set_escorted_atom"><aside class="declaration">proc </aside>only_set_escorted_atom<aside>(source, /<a href="atom.html">atom</a>/A) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L68">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 68"/></a></aside>
+        </h3>
+        <p>Sets escorted atom to our pre-defined default escorted atom, which by default is this spiderling's widow</p><h3 id="proc/parent_resist"><aside class="declaration">proc </aside>parent_resist<aside>() 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L156">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 156"/></a></aside>
+        </h3>
+        <p>resist when widow does</p><h3 id="proc/register_action_signals">register_action_signals<aside>(action_type) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L114">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 114"/></a></aside>
+        </h3>
+        <p>Check so that we dont keep attacking our target beyond it's death</p><h3 id="proc/spiderling_rage"><aside class="declaration">proc </aside>spiderling_rage<aside>() 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L129">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 129"/></a></aside>
+        </h3>
+        <p>This happens when the spiderlings mother dies, they move faster and will attack any nearby marines</p><h3 id="proc/toggle_rest"><aside class="declaration">proc </aside>toggle_rest<aside>() 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L161">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 161"/></a></aside>
+        </h3>
+        <p>rest and unrest when widow does</p><h3 id="proc/triggered_spiderling_rage"><aside class="declaration">proc </aside>triggered_spiderling_rage<aside>(/<a href="mob.html">mob</a>/M, /<a href="mob.html">mob</a>/victim) 
+        
+    
+            <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/blob/79a830b66231ff0ef778870bd6140fe23128faa9/code/modules/mob/living/carbon/xenomorph/castes/spiderling/spiderling.dm#L144">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;mob&#x2F;living&#x2F;carbon&#x2F;xenomorph&#x2F;castes&#x2F;spiderling&#x2F;spiderling.dm 144"/></a></aside>
+        </h3>
+        <p>Makes the spiderling roar and then kill themselves after some time</p></main>
+<footer>
+    tgmc.dme
+    <a href="https://github.com/Zar000/TerraGov-Marine-Corps-Zaro/tree/79a830b66231ff0ef778870bd6140fe23128faa9">79a830b</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>
