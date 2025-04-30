@@ -1302,8 +1302,13 @@ GLOBAL_LIST_EMPTY(transformation_animation_objects)
 
 	if(isnull(icon_states_cache[file]))
 		icon_states_cache[file] = list()
-		for(var/istate in icon_states(file))
-			icon_states_cache[file][istate] = TRUE
+		var/file_string = "[file]"
+		if(isfile(file) && length(file_string))
+			for(var/istate in json_decode(rustg_dmi_icon_states(file_string)))
+				icon_states_cache[file][istate] = TRUE
+		else // Use BYOND if it doesnt work for some reason.
+			for(var/istate in icon_states(file))
+				icon_states_cache[file][state] = TRUE
 
 	return !isnull(icon_states_cache[file][state])
 
