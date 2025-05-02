@@ -11,6 +11,7 @@ fi
 
 mkdir -p \
     $1/_maps \
+	$1/code/datums/greyscale/json_configs \
     $1/strings \
 	$1/tgui/public \
 	$1/tgui/packages/tgfont/static
@@ -22,6 +23,7 @@ fi
 
 cp tgmc.dmb tgmc.rsc $1/
 cp -r _maps/* $1/_maps/
+cd -r code/datums/greyscale/json_configs/* $1/code/datums/greyscale/json_configs/
 cp -r strings/* $1/strings/
 cp -r tgui/public/* $1/tgui/public/
 cp -r tgui/packages/tgfont/static/* $1/tgui/packages/tgfont/static

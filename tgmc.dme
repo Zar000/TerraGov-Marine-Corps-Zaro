@@ -177,6 +177,7 @@
 #include "code\__DEFINES\dcs\signals\signals.dm"
 #include "code\__DEFINES\dcs\signals\signals_datum.dm"
 #include "code\__DEFINES\dcs\signals\signals_food.dm"
+#include "code\__DEFINES\dcs\signals\signals_greyscale.dm"
 #include "code\__DEFINES\dcs\signals\signals_hud.dm"
 #include "code\__DEFINES\dcs\signals\signals_keybindings.dm"
 #include "code\__DEFINES\dcs\signals\signals_ladder.dm"
